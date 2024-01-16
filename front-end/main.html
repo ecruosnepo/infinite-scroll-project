@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>HODU</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <section class="header-wrap">
+        <!--    헤더 네비게이션-->
+        <nav class="header-nav">
+            <a href="">
+                <img class="header-logo" src="./img/Logo-fin.png" alt="상단 로고">
+            </a>
+            <div class="header-nav-wrap">
+                <ul class="header-nav-list">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Support</a></li>
+                </ul>
+                <a href="" download=""><button class="download-btn btn">Download</button></a>
+            </div>
+        </nav>
+
+        <!--    헤더 배너-->
+        <section class="header-banner">
+            <section class="header-banner-txt">
+                <h1>
+                    Lorem Ipsum is simply</br>
+                    dummy text of the printing and
+                </h1>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.</br>
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                </p>
+                <a href="" download="">
+                    <button class="btn">Download</button>
+                </a>
+            </section>
+            <section class="header-banner-img">
+                <img src="./img/banner_cat.png" alt="배너 고양이">
+            </section>
+        </section>
+    </section>
+</header>
+<!--    헤더 끝-->
+
+<article>
+    <section class="article-wrap">
+        <!--    상단 소개-->
+        <section class="intro">
+            <section class="intro-img">
+                <img class="gallery-img" src="./img/img_4.png" alt="호두4">
+            </section>
+            <section class="intro-txt">
+                <p>
+                    Lorem Ipsum is simply
+                    dummy text of the printing and dummy text
+                </p>
+                <span>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </span>
+            </section>
+        </section>
+
+        <!--    무한 스크롤-->
+        <section class="gallery">
+            <section class="gallery-txt">
+                <h2 class="gallery-title">
+                    dummy text of the printing and dummy
+                </h2>
+                <span class="gallery-desc">
+                Lorem Ipsum is simply <strong>dummy text</strong> of the printing and typesetting industry.</br>
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                </span>
+            </section>
+            <section class="image-list">
+            </section>
+            <section class="more-btn-area">
+                <p><strong>Continue exploring HODU</strong></p>
+                <button class="more-btn btn">show more</button>
+            </section>
+        </section>
+
+        <!--    지도-->
+        <section class="map">
+            <section class="kakao-map-title">
+                <h2>Where you’ll be</h2>
+                <p>
+                330, Cheomdan-ro, Jeju-si, Jeju-do, Republic of Korea
+                </p>
+            </section>
+            <section class="kakao-map">
+                <div id="map" style="width:100%;height:400px;"></div>
+            </section>
+        </section>
+    </section>
+</article>
+<!--사진 목록 끝-->
+
+<footer>
+    <!--    구독-->
+    <section class="subscribe">
+        <section class="subscribe-wrap">
+            <section class="subscribe-txt">
+                <h2>Subscribe to our Blog post</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+            </section>
+            <section class="subscribe-input">
+                <img src="./img/mail.svg" alt="메일 아이콘">
+                <input type="email" placeholder="Enter your e-mail address">
+                <button class="btn subscribeBtn">Subscribe</button>
+            </section>
+        </section>
+    </section>
+
+    <!--    하단 호두 사진-->
+    <section class="footer-img-area">
+        <img class="footer-img" src="./img/img_5.png" alt="호두얼빡">
+        <!--        맨 위로 버튼-->
+        <a class="top-btn" href="">
+            <button>
+                <img src="./img/keyboard_arrow_up.svg" alt="맨 위로 버튼">
+            </button>
+        </a>
+    </section>
+
+    <section class="site-links">
+        <!--    사이트 링크-->
+        <section class="site-links-wrap">
+            <div class="footer-logo">
+                <img src="./img/Logo-fin.svg" alt="하단 로고">
+            </div>
+            <div class="links-icon">
+                <a href="">
+                    <img src="./img/icon-blog.png" alt="">
+                </a>
+                <a href="">
+                    <img src="./img/icon-insta.png" alt="">
+                </a>
+                <a href="">
+                    <img src="./img/icon-facebook.png" alt="">
+                </a>
+                <a href="">
+                    <img src="./img/icon-youtube.png" alt="">
+                </a>
+            </div>
+        </section>
+    </section>
+</footer>
+
+<article class="modal">
+    <section class="modal-wrap">
+        <img src="./img/modal_cat.png" alt="모달고양이">
+        <h2>Thank you!</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
+        <button class="btn modal-btn">OK! I Love HODU</button>
+    </section>
+</article>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=925941e5210ada9835eceae187cbdbba"></script>
+<script>
+    var container = document.getElementById('map');
+    var options = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667),
+        level: 3
+    };
+    var map = new kakao.maps.Map(container, options);
+</script>
+<script src="./js.js"></script>
+</body>
+</html>
