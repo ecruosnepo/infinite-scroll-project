@@ -2,10 +2,12 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>HODU</title>
+    <title>Catopia</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<section class="body-wrap">
+
 <header>
     <section class="header-wrap">
         <!--    헤더 네비게이션-->
@@ -82,9 +84,10 @@
                 <button class="more-btn btn">show more</button>
             </section>
         </section>
+        <hr>
 
         <!--    지도-->
-        <section class="map">
+        <section class="map-area">
             <section class="kakao-map-title">
                 <h2>Where you’ll be</h2>
                 <p>
@@ -109,7 +112,7 @@
             </section>
             <section class="subscribe-input">
                 <img src="./img/mail.svg" alt="메일 아이콘">
-                <input type="email" placeholder="Enter your e-mail address">
+                <input type="email" placeholder="Enter your e-mail address" required>
                 <button class="btn subscribeBtn">Subscribe</button>
             </section>
         </section>
@@ -117,13 +120,13 @@
 
     <!--    하단 호두 사진-->
     <section class="footer-img-area">
-        <img class="footer-img" src="./img/img_5.png" alt="호두얼빡">
+        <img class="footer-img" src="./img/img_5.png" alt="고양이얼빡">
         <!--        맨 위로 버튼-->
-        <a class="top-btn" href="">
-            <button>
+
+            <button class="top-btn">
                 <img src="./img/keyboard_arrow_up.svg" alt="맨 위로 버튼">
             </button>
-        </a>
+
     </section>
 
     <section class="site-links">
@@ -155,19 +158,12 @@
         <img src="./img/modal_cat.png" alt="모달고양이">
         <h2>Thank you!</h2>
         <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
-        <button class="btn modal-btn">OK! I Love HODU</button>
+        <button class="btn modal-btn">OK! I Love Cat</button>
     </section>
 </article>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=925941e5210ada9835eceae187cbdbba"></script>
-<script>
-    var container = document.getElementById('map');
-    var options = {
-        center: new kakao.maps.LatLng(33.450701, 126.570667),
-        level: 3
-    };
-    var map = new kakao.maps.Map(container, options);
-</script>
 <script src="./js.js"></script>
+</section>
 </body>
 </html>
