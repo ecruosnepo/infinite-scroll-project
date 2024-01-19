@@ -101,7 +101,7 @@ header{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 180px;
+    gap: 170px;
 }
 
 .header-banner-txt{
@@ -257,19 +257,30 @@ footer, .footer-img-area{
 }
 
 footer{
-    margin-top: 80px;
+    margin-top: 150px;
     width: 100%;
+}
+
+.footer-logo img{
+    height: 70px;
 }
 
 .site-links{
     max-width: 80rem;
-    margin: 30px auto;
+    margin: 45px auto;
 }
 
 .site-links-wrap{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.links-icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
 }
 
 .footer-img{
