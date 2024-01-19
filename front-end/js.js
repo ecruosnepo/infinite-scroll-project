@@ -14,7 +14,6 @@ const ioImage = (entries, io)=>{
             if(timer === null){
                 timer = setTimeout(()=>{
                     console.log('교차 감지');
-                    io.unobserve(entry.target);
                     fetchImages();
                     timer = null;
                 },100);
@@ -33,6 +32,7 @@ async function fetchImages(){
             throw new Error('네트워크 응답에 문제가 있습니다.');
         }
         const images =  await response.json();
+        io.disconnect();
         makeImageList(images);
     }catch(error){
         console.error('데이터를 가져오는데 문제가 발생했습니다 :', error);
@@ -43,7 +43,7 @@ async function fetchImages(){
 function makeImageList (images){
     console.log('이미지 목록 생성');
     images.forEach((item, idx, array)=>{
-        imageList.innerHTML += "<img src="+item.download_url+" alt='사진'>";
+        imageList.innerHTML += "<img src="+item.download_url+" alt='사진' loading='lazy' decoding='async'>";
         if(idx === images.length-1){
             io.observe(imageList.lastElementChild);
         }
