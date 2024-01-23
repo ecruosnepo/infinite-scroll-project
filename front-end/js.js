@@ -14,7 +14,14 @@ const ioImage = (entries, io)=>{
             if(timer === null){
                 timer = setTimeout(()=>{
                     console.log('교차 감지');
-                    fetchImages();
+                    io.disconnect();
+                    //10페이지를 불러올 때마다 이미지 불러오기를 멈추고 더 보기 버튼 표시
+                    if(pageNumber%10 == 0){
+                        document.querySelector(".more-btn-area").style.display = "flex";
+                    }
+                    else{
+                        fetchImages();
+                    }
                     timer = null;
                 },100);
             }
@@ -32,7 +39,6 @@ async function fetchImages(){
             throw new Error('네트워크 응답에 문제가 있습니다.');
         }
         const images =  await response.json();
-        io.disconnect();
         makeImageList(images);
     }catch(error){
         console.error('데이터를 가져오는데 문제가 발생했습니다 :', error);
