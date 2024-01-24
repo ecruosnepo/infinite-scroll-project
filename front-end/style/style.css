@@ -1,0 +1,363 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin:0;
+    padding:0;
+    line-height: 20px;
+    font-family: Pretendard-Regular;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol{
+    list-style: none;
+}
+
+img{
+    width: 100%;
+    vertical-align: top;
+}
+
+.btn{
+    padding: 15px 30px;
+    border-radius: 40px;
+    background-color: #D97652;
+    color: #FFFFFF;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button{
+    border: none;
+    cursor: pointer;
+}
+
+.a11y{
+    display: inline-block;
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    border: none;
+    clip-path: inset(50%);
+}
+
+header{
+    background-color: #F2E9D8;
+    display: flex;
+    justify-content: center;
+}
+
+.header-wrap, .article-wrap{
+    flex-basis: 1278px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-wrap{
+    padding: 26px 0 262px;
+    background: url("../img/banner_cat.png") bottom right no-repeat;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-nav h1 {
+    margin: 5px 0 0 0;
+}
+
+.header-nav-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.header-banner{
+    float: left;
+    margin-top: 231px;
+}
+
+.header-banner h2{
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: 700;
+}
+
+.header-banner p{
+    max-width: 420px;
+    margin: 40px 0;
+}
+
+/*main*/
+main{
+    margin: 80px 0 -100px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.article-wrap{
+    max-width: 1278px;
+}
+
+.intro{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.intro-img{
+    flex-basis: 660px;
+    border-radius: 30px;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.25);
+}
+
+.intro-txt{
+    flex-basis: 510px;
+}
+
+.intro-txt h2{
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 45px;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    margin: 120px 0 88px;
+    border-bottom: 1px solid #C4C4C430;
+}
+
+.gallery-title{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+    color: #D97652;
+}
+
+.gallery-desc{
+    font-weight: 400;
+    line-height: 20px;
+    margin-top: 40px;
+}
+
+.gallery-desc strong{
+    color : #D97652;
+}
+
+.image-list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 72px;
+    margin: 88px 0 100px;
+}
+
+.image-list li{
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.25);
+}
+
+.image-list img{
+    object-fit: cover;
+    width: 378px;
+    height: 378px;
+}
+
+.more-btn-area{
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.more-btn-area p{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    margin-bottom: 28px;
+}
+
+.map-area{
+    margin-bottom: 80px;
+}
+
+.kakao-map-title h2{
+    font-size: 36px;
+    line-height: 46px;
+    font-weight: 700;
+}
+
+.kakao-map-title address{
+    margin: 20px 0 48px;
+    color: #606367;
+    font-style: normal;
+}
+
+#map{
+    border-radius: 12px;
+}
+
+.subscribe-wrap{
+    border: none;
+    border-radius: 30px;
+    background-color: #263140;
+    color: #FFFFFF;
+    padding: 50px 58px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 163px;
+}
+
+.subscribe-txt{
+    flex-basis: 471px;
+}
+
+.subscribe-txt h2{
+    font-size: 36px;
+    line-height: 45px;
+    margin-bottom:18px;
+}
+
+.subscribe-txt p{
+    font-size: 14px;
+    color: #F2E9D8;
+}
+
+.subscribe-form{
+    position: relative;
+    flex-basis: 530px;
+}
+
+.subscribe-form::before{
+    position:absolute;
+    left:28px;
+    top:50%;
+    transform: translateY(-50%);
+    content:'';
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/mail.png");
+}
+
+.subscribe-form input{
+    width:100%;
+    padding: 20px 150px 20px 68px;
+    border-radius: 60px;
+    box-sizing: border-box;
+}
+
+.subscribe-form .subscribe-btn{
+    position: absolute;
+    right:6px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*footer*/
+footer::before{
+    content: '';
+    display: block;
+    height: 340px;
+    background: url("../img/img_5.png") center/cover no-repeat;
+}
+
+.footer-wrap{
+    max-width: 1278px;
+    margin: 0 auto;
+    padding: 45px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.site-links{
+    display: flex;
+    gap: 20px;
+}
+
+.site-links a{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+
+.site-links .link-blog{
+    background: url("../img/icon-blog.png") center #f29d52 no-repeat;
+}
+.site-links .link-insta{
+    background: url("../img/icon-insta.png") center #f29d52 no-repeat;
+}
+.site-links .link-facebook{
+    background: url("../img/icon-facebook.png") center #f29d52 no-repeat;
+}
+.site-links .link-youtube{
+    background: url("../img/icon-youtube.png") center #f29d52 no-repeat;
+}
+
+.top-btn{
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #C4C4C4;
+    border-radius: 50%;
+    opacity: 80%;
+    background: url("../img/keyboard_arrow_up.svg") #fff center no-repeat;
+}
+
+.top-btn:hover{
+    opacity: 100%;
+}
+
+.modal{
+    text-align: center;
+    background: url("../img/modal_bg.png") center/cover no-repeat;
+    max-width: 600px;
+    padding: 60px 108px 40px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0px 0px 30px 0px #00000033;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal img{
+    width: 110px;
+    margin-bottom: 24px;
+}
+
+.modal h3{
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 45px;
+    margin-top: 12px;
+    color: #D97652;
+}
+
+.modal p{
+    margin: 12px 0 38px;
+}

@@ -1,6 +1,6 @@
 const imageList = document.querySelector(".image-list");
 const moreBtn = document.querySelector(".more-btn");
-const subscribeBtn = document.querySelector(".subscribeBtn");
+const subscribeBtn = document.querySelector(".subscribe-btn");
 const modal = document.querySelector(".modal");
 const topBtn = document.querySelector(".top-btn");
 let moreBtnClick = false;
@@ -14,7 +14,14 @@ const ioImage = (entries, io)=>{
             if(timer === null){
                 timer = setTimeout(()=>{
                     console.log('교차 감지');
-                    fetchImages();
+                    io.disconnect();
+                    //10페이지를 불러올 때마다 이미지 불러오기를 멈추고 더 보기 버튼 표시
+                    if(pageNumber%10 == 0){
+                        document.querySelector(".more-btn-area").style.display = "block";
+                    }
+                    else{
+                        fetchImages();
+                    }
                     timer = null;
                 },100);
             }
@@ -32,7 +39,6 @@ async function fetchImages(){
             throw new Error('네트워크 응답에 문제가 있습니다.');
         }
         const images =  await response.json();
-        io.disconnect();
         makeImageList(images);
     }catch(error){
         console.error('데이터를 가져오는데 문제가 발생했습니다 :', error);
@@ -43,7 +49,7 @@ async function fetchImages(){
 function makeImageList (images){
     console.log('이미지 목록 생성');
     images.forEach((item, idx, array)=>{
-        imageList.innerHTML += "<img src="+item.download_url+" alt='사진' loading='lazy' decoding='async'>";
+        imageList.innerHTML += "<li><button type='button'><img src="+item.download_url+" alt='사진' loading='lazy' decoding='async'></button></li>";
         if(idx === images.length-1){
             io.observe(imageList.lastElementChild);
         }
@@ -61,20 +67,10 @@ moreBtn.addEventListener('click', ()=>{
 // 최초 사진 6장 불러오기
 fetchImages();
 
-//모달 드러내기
+//모달
 subscribeBtn.addEventListener('click', ()=>{
-    modal.style.display="flex";
+    modal.showModal();
 })
-
-//모달 숨기기
-document.querySelector(".modal-btn").addEventListener('click',()=>{
-    modal.style.display="none";
-})
-
-//부드럽게 맨 위로 스크롤 하는 버튼
-topBtn.addEventListener('click',()=>{
-    window.scrollTo({top:0,behavior:'smooth'});
-});
 
 //카카오 지도
 var container = document.getElementById('map');
